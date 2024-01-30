@@ -1,0 +1,26 @@
+@use './function';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$default-ff: -apple-system, system-ui, 'Segoe UI', Roboto, Noto, Oxygen-Sans,
+  Ubuntu, Cantrell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
+
+// Colors
+$todoist-p1-color: #d1453b;
+$todoist-p2-color: #eb8909;
+$todoist-p3-color: #246fe0;
+$todoist-p4-color: #666;
+$black: #202020;
+
+// Font-sizes
+$fs-100: 10px;
+$fs-200: 12px;
+$fs-300: 13px;
+$fs-400: 14px;
+$fs-500: 26px;
+// $fs-400:;
+
+$h1-fs: $fs-500;
+
+// Border radius
+$default-br: 6px;
