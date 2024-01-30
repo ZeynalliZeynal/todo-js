@@ -1,3 +1,8 @@
 @use '../../utils/variable' as *;
 @use '../../utils/mixin' as *;
 @use '../../utils/extend' as *;
+
+.container-inner {
+  width: 800px;
+  margin: 8px 55px 12px;
+}

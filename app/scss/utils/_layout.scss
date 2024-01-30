@@ -81,6 +81,9 @@ $container: (
 .flex-auto {
   flex: auto;
 }
+.border-0 {
+  border-color: transparent !important;
+}
 /***** End Custom Classes *****/
 
 /***** Grid *****/
