@@ -13,7 +13,7 @@
   </head>
   <body>
     <main>
-      <section>
+      <section id="todo_app">
         <div class="container">
           <div class="row justify-center">
             <div class="container-inner">
@@ -31,18 +31,45 @@
           </div>
           <div class="row justify-center">
             <div class="container-inner">
-              <form action="#">
-                <div class="input-form">
-                  <div class="input-form__inputs">
-                    <div class="input-form__inputs__input-name">
-                      <input type="text" placeholder="Task Name" />
-                    </div>
-                    <div class="input-form__inputs__input-desc">
-                      <input type="text" placeholder="Description" />
-                    </div>
+              <ul class="tasks-added">
+                <li class="tasks-added__item">
+                  <button class="tasks-added__item__frame">
+                    <span class="tasks-added__item__frame__icon"
+                      ><i class="bi bi-check-lg"></i>
+                    </span>
+                  </button>
+                  <div class="tasks-added__item__box">
+                    <div class="tasks-added__item__box__name">adashda</div>
+                    <div class="tasks-added__item__box__desc">lorem</div>
                   </div>
-                  <div class="input-form__labels">
-                    <ul class="input-form__labels__list">
+                  <div class="tasks-added__item__funcs">
+                    <button class="tasks-added__item__funcs__func btn-label">
+                      <i class="bi bi-pen"></i>
+                    </button>
+                    <button class="tasks-added__item__funcs__func btn-label">
+                      <i class="bi bi-calendar"></i>
+                    </button>
+                    <button class="tasks-added__item__funcs__func btn-label">
+                      <i class="bi bi-chat-left-dots"></i>
+                    </button>
+                    <button class="tasks-added__item__funcs__func btn-label">
+                      <i class="bi bi-three-dots"></i>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              <form action="#">
+                <div class="padding_div">
+                  <div class="input-form">
+                    <div class="input-form__inputs">
+                      <div class="input-form__inputs__input-name">
+                        <input type="text" placeholder="Task Name" />
+                      </div>
+                      <div class="input-form__inputs__input-desc">
+                        <input type="text" placeholder="Description" />
+                      </div>
+                    </div>
+                    <ul class="input-form__labels">
                       <li>
                         <button class="btn-label btn-label--date">
                           <span class="btn-label__icon"
@@ -124,42 +151,50 @@
                     </ul>
                   </div>
                 </div>
-                <div class="add-task">
-                  <div class="add-task__inbox-btn">
-                    <button class="btn-label border-0">
-                      <span class="btn-label__icon"
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="none"
-                          viewBox="0 0 16 16"
-                          class="AyswQEh"
-                        >
-                          <path
-                            fill="currentColor"
-                            fill-rule="evenodd"
-                            d="M5.509 2h4.982a2 2 0 0 1 1.923 1.45l1.509 5.28c.051.18.077.365.077.55V12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.28a2 2 0 0 1 .077-.55l1.509-5.28A2 2 0 0 1 5.509 2Zm0 1a1 1 0 0 0-.962.726l-1.509 5.28A1 1 0 0 0 3 9.28V12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9.28a.997.997 0 0 0-.039-.274l-1.508-5.28A1 1 0 0 0 10.49 3H5.51Zm4.685 7a2.25 2.25 0 0 1-4.388 0H4.5a.5.5 0 1 1 0-1h1.75a.5.5 0 0 1 .5.5 1.25 1.25 0 0 0 2.5 0 .5.5 0 0 1 .5-.5h1.75a.5.5 0 0 1 0 1h-1.306Z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="btn-label__content">Inbox</span>
-                      <span class="btn-label__inbox"
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="none"
-                          viewBox="0 0 16 16"
-                          aria-hidden="true"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="M7.646 9.646 4.854 6.854A.5.5 0 0 1 5.207 6h5.586a.5.5 0 0 1 .353.854L8.354 9.646a.5.5 0 0 1-.708 0Z"
-                          ></path></svg
-                      ></span>
-                    </button>
+                <div class="padding_div">
+                  <div class="add-task">
+                    <div class="add-task__inbox-btn">
+                      <button class="btn-label border-0">
+                        <span class="btn-label__icon"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="none"
+                            viewBox="0 0 16 16"
+                            class="AyswQEh"
+                          >
+                            <path
+                              fill="currentColor"
+                              fill-rule="evenodd"
+                              d="M5.509 2h4.982a2 2 0 0 1 1.923 1.45l1.509 5.28c.051.18.077.365.077.55V12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.28a2 2 0 0 1 .077-.55l1.509-5.28A2 2 0 0 1 5.509 2Zm0 1a1 1 0 0 0-.962.726l-1.509 5.28A1 1 0 0 0 3 9.28V12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9.28a.997.997 0 0 0-.039-.274l-1.508-5.28A1 1 0 0 0 10.49 3H5.51Zm4.685 7a2.25 2.25 0 0 1-4.388 0H4.5a.5.5 0 1 1 0-1h1.75a.5.5 0 0 1 .5.5 1.25 1.25 0 0 0 2.5 0 .5.5 0 0 1 .5-.5h1.75a.5.5 0 0 1 0 1h-1.306Z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </span>
+                        <span class="btn-label__content">Inbox</span>
+                        <span class="btn-label__inbox"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="none"
+                            viewBox="0 0 16 16"
+                            aria-hidden="true"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M7.646 9.646 4.854 6.854A.5.5 0 0 1 5.207 6h5.586a.5.5 0 0 1 .353.854L8.354 9.646a.5.5 0 0 1-.708 0Z"
+                            ></path></svg
+                        ></span>
+                      </button>
+                    </div>
+                    <div class="add-task__choices">
+                      <button class="btn btn--cancel">Cancel</button>
+                      <button class="btn btn--add btn--deactive">
+                        Add task
+                      </button>
+                    </div>
                   </div>
                 </div>
               </form>
