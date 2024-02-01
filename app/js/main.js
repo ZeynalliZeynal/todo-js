@@ -11,10 +11,11 @@ const addedTask = document.querySelector('.tasks-added')
 const taskCounter = document.querySelector(
   '.heading__task-counter .heading__task-counter__number'
 )
+const plusBtn = document.querySelector('.add-task-plus')
 
-alert(
-  'YALNIZ TASK ELAVE ETME, SILME, TASK SAYAN VE ADD BUTONUNUN FUNKSIYANALLIGI MOVCUDDUR.'
-)
+// alert(
+//   'YALNIZ TASK ELAVE ETME, SILME, TASK SAYAN VE ADD BUTONUNUN FUNKSIYANALLIGI MOVCUDDUR.'
+// )
 
 // Add task button
 nameInput.addEventListener('keyup', () => {

@@ -633,5 +633,16 @@ h1 {
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+#todo_app .add-task-plus {
+  font-size: 14px;
+  gap: 0.5rem;
+  color: #808080;
+}
+#todo_app .add-task-plus span.plus-icon {
+  color: #d1453b;
+}
+#todo_app .add-task-plus:hover {
+  color: #d1453b;
+}
 
 /*# sourceMappingURL=style.css.map */

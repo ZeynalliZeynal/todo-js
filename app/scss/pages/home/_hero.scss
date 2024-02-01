@@ -125,4 +125,18 @@
       }
     }
   }
+
+  .add-task-plus {
+    font-size: $fs-400;
+    gap: 0.5rem;
+    color: #808080;
+
+    span.plus-icon {
+      color: $todoist-p1-color;
+    }
+
+    &:hover {
+      color: $todoist-p1-color;
+    }
+  }
 }
