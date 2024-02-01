@@ -6,16 +6,14 @@ const descInput = document.querySelector(
   '.input-form__inputs__input-desc input'
 )
 const addButton = document.querySelector('.btn--add')
+const cancelButton = document.querySelector('.btn--cancel')
 const form = document.querySelector('form')
 const addedTask = document.querySelector('.tasks-added')
 const taskCounter = document.querySelector(
   '.heading__task-counter .heading__task-counter__number'
 )
 const plusBtn = document.querySelector('.add-task-plus')
-
-// alert(
-//   'YALNIZ TASK ELAVE ETME, SILME, TASK SAYAN VE ADD BUTONUNUN FUNKSIYANALLIGI MOVCUDDUR.'
-// )
+const taskForm = document.querySelector('.task')
 
 // Add task button
 nameInput.addEventListener('keyup', () => {
@@ -26,9 +24,24 @@ nameInput.addEventListener('keyup', () => {
   addButton.classList.toggle('btn--deactive', !trimmedValue)
 })
 
+// * events
+// add task
+plusBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  if (e.target.closest('.add-task-plus')) {
+    plusBtn.classList.add('d-none')
+    taskForm.classList.remove('d-none')
+  }
+})
+
+cancelButton.addEventListener('click', (e) => {
+  e.preventDefault()
+  taskForm.classList.add('d-none')
+  plusBtn.classList.remove('d-none')
+})
+
 // Form
 let taskArr = []
-
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   if (addButton.classList.contains('btn--deactive') || !nameInput.value.trim())
@@ -48,6 +61,7 @@ form.addEventListener('submit', (e) => {
   taskCounter.innerHTML = taskArr.length
 })
 
+// * functions
 // Initializing
 function init() {
   nameInput.value = ''
