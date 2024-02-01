@@ -518,6 +518,8 @@ h1 {
 }
 .btn--deactive {
   opacity: 0.7;
+}
+.btn--deactive:hover {
   cursor: not-allowed;
 }
 
