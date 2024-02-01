@@ -40,8 +40,15 @@ cancelButton.addEventListener('click', (e) => {
   plusBtn.classList.remove('d-none')
 })
 
-// Form
 let taskArr = []
+// local storage
+let localValue = JSON.parse(localStorage.getItem('tasks'))
+if (localValue) {
+  taskArr = localValue
+  renderTasks(taskArr)
+}
+// Form
+
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   if (addButton.classList.contains('btn--deactive') || !nameInput.value.trim())
@@ -59,6 +66,10 @@ form.addEventListener('submit', (e) => {
 
   taskCounter.parentElement.classList.remove('d-none')
   taskCounter.innerHTML = taskArr.length
+
+  setTimeout(() => {
+    localStorage.setItem('tasks', JSON.stringify(taskArr))
+  }, 10)
 })
 
 // * functions
@@ -77,6 +88,10 @@ function deleteItem(id) {
 
   taskCounter.innerHTML = taskArr.length
   if (taskArr.length === 0) taskCounter.parentElement.classList.add('d-none')
+
+  setTimeout(() => {
+    localStorage.setItem('tasks', JSON.stringify(taskArr))
+  }, 10)
 }
 
 // rendering dom
