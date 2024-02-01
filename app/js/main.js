@@ -83,6 +83,8 @@ function init() {
 
 // item delete
 function deleteItem(id) {
+  const confirmation = confirm('Are you sure to delete the task?')
+  if (!confirmation) return
   taskArr = taskArr.filter((item) => item.taskId !== id)
   renderTasks(taskArr)
 
