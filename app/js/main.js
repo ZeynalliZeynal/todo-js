@@ -8,11 +8,17 @@ const descInput = document.querySelector(
 const addButton = document.querySelector('.btn--add')
 const form = document.querySelector('form')
 const addedTask = document.querySelector('.tasks-added')
+const taskCounter = document.querySelector(
+  '.heading__task-counter .heading__task-counter__number'
+)
 
 // Add task button
 nameInput.addEventListener('keyup', () => {
-  if (nameInput.value.trim()) addButton.classList.remove('btn--deactive')
-  else addButton.classList.add('btn--deactive')
+  // if (nameInput.value.trim()) addButton.classList.remove('btn--deactive')
+  // else addButton.classList.add('btn--deactive')
+
+  const trimmedValue = nameInput.value.trim()
+  addButton.classList.toggle('btn--deactive', !trimmedValue)
 })
 
 // Form
@@ -20,7 +26,8 @@ let taskArr = []
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
-  if (addButton.classList.contains('btn--deactive')) return
+  if (addButton.classList.contains('btn--deactive') || !nameInput.value.trim())
+    return
 
   const taskID = generateId()
   taskArr.push({
@@ -28,10 +35,12 @@ form.addEventListener('submit', (e) => {
     taskName: nameInput.value,
     taskDesc: descInput.value,
   })
-  renderTasks(taskArr)
 
-  console.log(taskArr)
+  renderTasks(taskArr)
   init()
+
+  taskCounter.parentElement.classList.remove('d-none')
+  taskCounter.innerHTML = taskArr.length
 })
 
 // Initializing
@@ -46,7 +55,9 @@ function init() {
 function deleteItem(id) {
   taskArr = taskArr.filter((item) => item.taskId !== id)
   renderTasks(taskArr)
-  console.log(taskArr)
+
+  taskCounter.innerHTML = taskArr.length
+  if (taskArr.length === 0) taskCounter.parentElement.classList.add('d-none')
 }
 
 // rendering dom
