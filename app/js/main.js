@@ -12,6 +12,10 @@ const taskCounter = document.querySelector(
   '.heading__task-counter .heading__task-counter__number'
 )
 
+alert(
+  'YALNIZ TASK ELAVE ETME, SILME, TASK SAYAN VE ADD BUTONUNUN FUNKSIYANALLIGI MOVCUDDUR.'
+)
+
 // Add task button
 nameInput.addEventListener('keyup', () => {
   // if (nameInput.value.trim()) addButton.classList.remove('btn--deactive')
