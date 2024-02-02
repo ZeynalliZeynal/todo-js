@@ -12,9 +12,28 @@
     <script defer src="./app/js/main.js"></script>
   </head>
   <body>
-    <div class="modal-container">
-      <div class="modal"></div>
+    <div class="modal-overlay modal-deactive">
       <div class="overlay"></div>
+      <div class="modal-container">
+        <div class="modal">
+          <form action="#">
+            <div class="input-form">
+              <div class="input-form__inputs">
+                <div class="input-form__inputs__input-name">
+                  <input type="text" placeholder="Task Name" />
+                </div>
+                <div class="input-form__inputs__input-desc">
+                  <input type="text" placeholder="Description" />
+                </div>
+              </div>
+              <div class="add-task__choices">
+                <button class="btn btn--cancel">Cancel</button>
+                <button class="btn btn--add" data-save-btn>Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
     <main>
       <section id="todo_app">
@@ -170,7 +189,7 @@
                       </div>
                       <div class="add-task__choices">
                         <button class="btn btn--cancel">Cancel</button>
-                        <button class="btn btn--add btn--deactive">
+                        <button class="btn btn--add btn--deactive" data-add-btn>
                           Add task
                         </button>
                       </div>

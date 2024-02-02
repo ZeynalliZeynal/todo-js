@@ -1,10 +1,66 @@
 @use '../utils/variable' as *;
 @use '../utils/mixin' as *;
 @use '../utils/extend' as *;
+body {
+  overflow: hidden;
+}
+.modal-overlay {
+  $transition: all 0.5s ease-in-out;
+  .modal-container {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
 
-.modal-container {
-  background-color: #fff;
-  border-radius: 6px;
-  border: 1px solid $gray-light;
-  width: 600px;
+    @include flexbox(center, center, wrap);
+    .modal {
+      background-color: #fff;
+      border-radius: 12px;
+      // border: 1px solid $gray-light;
+      width: 600px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      form {
+        border: none;
+
+        .input-form {
+          &__inputs {
+            display: grid;
+            gap: 0.5rem;
+            &__input-name {
+              font-size: 20px;
+              font-weight: 600;
+              input::placeholder {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+
+        .add-task__choices {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    transition: $transition;
+  }
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+    transition: $transition;
+  }
+  &.modal-deactive {
+    .modal-container {
+      transform: translateX(200%);
+    }
+    .overlay {
+      backdrop-filter: blur(0);
+      background-color: transparent;
+      z-index: -1;
+    }
+  }
 }

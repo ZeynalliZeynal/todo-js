@@ -7,6 +7,46 @@
   margin: 8px 55px 12px;
 }
 
+form {
+  font-size: $fs-400;
+  border: 1px solid $label-border;
+  border-radius: 6px;
+
+  .padding_div {
+    & > * {
+      padding: 10px;
+    }
+    &:last-child {
+      border-top: 1px solid $label-border;
+    }
+  }
+  .input-form {
+    & > * {
+      margin-bottom: 10px;
+    }
+
+    &__inputs {
+      input::placeholder {
+        color: $gray-light;
+        font-size: $fs-400;
+      }
+      &__input-name input::placeholder {
+        font-weight: 600;
+      }
+    }
+    &__labels {
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+  }
+  .add-task {
+    @include flexbox(center, space-between, wrap);
+
+    &__choices {
+      @include flexbox(center, center, wrap, 0.5rem);
+    }
+  }
+}
 #todo_app {
   .heading {
     & > * {
@@ -80,47 +120,6 @@
         .tasks-added__item__funcs {
           visibility: visible;
           opacity: 1;
-        }
-      }
-    }
-  }
-  form {
-    font-size: $fs-400;
-    border: 1px solid $label-border;
-    border-radius: 6px;
-
-    .padding_div {
-      & > * {
-        padding: 10px;
-      }
-      &:last-child {
-        border-top: 1px solid $label-border;
-      }
-
-      .input-form {
-        & > * {
-          margin-bottom: 10px;
-        }
-
-        &__inputs {
-          input::placeholder {
-            color: $gray-light;
-            font-size: $fs-400;
-          }
-          &__input-name input::placeholder {
-            font-weight: 600;
-          }
-        }
-        &__labels {
-          justify-content: flex-start;
-          gap: 0.5rem;
-        }
-      }
-      .add-task {
-        @include flexbox(center, space-between, wrap);
-
-        &__choices {
-          @include flexbox(center, center, wrap, 0.5rem);
         }
       }
     }

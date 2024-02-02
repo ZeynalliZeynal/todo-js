@@ -5,7 +5,7 @@ const nameInput = document.querySelector(
 const descInput = document.querySelector(
   '.input-form__inputs__input-desc input'
 )
-const addButton = document.querySelector('.btn--add')
+const addButton = document.querySelector('[data-add-btn]')
 const cancelButton = document.querySelector('.btn--cancel')
 const form = document.querySelector('form')
 const addedTask = document.querySelector('.tasks-added')

@@ -527,16 +527,103 @@ h1 {
   cursor: not-allowed;
 }
 
-.modal-container {
+body {
+  overflow: hidden;
+}
+
+.modal-overlay .modal-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  transition: all 0.5s ease-in-out;
+}
+.modal-overlay .modal-container .modal {
   background-color: #fff;
-  border-radius: 6px;
-  border: 1px solid #999999;
+  border-radius: 12px;
   width: 600px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.modal-overlay .modal-container .modal form {
+  border: none;
+}
+.modal-overlay .modal-container .modal form .input-form__inputs {
+  display: grid;
+  gap: 0.5rem;
+}
+.modal-overlay .modal-container .modal form .input-form__inputs__input-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+.modal-overlay .modal-container .modal form .input-form__inputs__input-name input::placeholder {
+  font-size: 20px;
+}
+.modal-overlay .modal-container .modal form .add-task__choices {
+  justify-content: flex-end;
+}
+.modal-overlay .overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  transition: all 0.5s ease-in-out;
+}
+.modal-overlay.modal-deactive .modal-container {
+  transform: translateX(200%);
+}
+.modal-overlay.modal-deactive .overlay {
+  backdrop-filter: blur(0);
+  background-color: transparent;
+  z-index: -1;
 }
 
 .container-inner {
   width: 800px;
   margin: 8px 55px 12px;
+}
+
+form {
+  font-size: 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+}
+form .padding_div > * {
+  padding: 10px;
+}
+form .padding_div:last-child {
+  border-top: 1px solid #e6e6e6;
+}
+form .input-form > * {
+  margin-bottom: 10px;
+}
+form .input-form__inputs input::placeholder {
+  color: #999999;
+  font-size: 14px;
+}
+form .input-form__inputs__input-name input::placeholder {
+  font-weight: 600;
+}
+form .input-form__labels {
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+form .add-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+form .add-task__choices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 #todo_app .heading > * {
@@ -601,44 +688,6 @@ h1 {
 #todo_app .tasks-added__item:hover .tasks-added__item__funcs {
   visibility: visible;
   opacity: 1;
-}
-#todo_app form {
-  font-size: 14px;
-  border: 1px solid #e6e6e6;
-  border-radius: 6px;
-}
-#todo_app form .padding_div > * {
-  padding: 10px;
-}
-#todo_app form .padding_div:last-child {
-  border-top: 1px solid #e6e6e6;
-}
-#todo_app form .padding_div .input-form > * {
-  margin-bottom: 10px;
-}
-#todo_app form .padding_div .input-form__inputs input::placeholder {
-  color: #999999;
-  font-size: 14px;
-}
-#todo_app form .padding_div .input-form__inputs__input-name input::placeholder {
-  font-weight: 600;
-}
-#todo_app form .padding_div .input-form__labels {
-  justify-content: flex-start;
-  gap: 0.5rem;
-}
-#todo_app form .padding_div .add-task {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-#todo_app form .padding_div .add-task__choices {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
 }
 #todo_app .add-task-plus {
   font-size: 14px;
