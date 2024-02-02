@@ -527,6 +527,13 @@ h1 {
   cursor: not-allowed;
 }
 
+.modal-container {
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #999999;
+  width: 600px;
+}
+
 .container-inner {
   width: 800px;
   margin: 8px 55px 12px;

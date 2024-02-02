@@ -1,3 +1,10 @@
 @use '../utils/variable' as *;
 @use '../utils/mixin' as *;
 @use '../utils/extend' as *;
+
+.modal-container {
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid $gray-light;
+  width: 600px;
+}
